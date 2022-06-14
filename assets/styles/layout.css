@@ -1,0 +1,51 @@
+.main-grid {
+  --column-count: 6;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(var(--m), 1fr) repeat(var(--column-count), minmax(0, 12rem)) minmax(var(--m), 1fr);
+}
+
+.main-grid > * {
+  display: grid;
+  grid-column: 1/-1;
+  grid-template-columns: subgrid;
+}
+
+.main-grid > * > * {
+  grid-column: 2 / -2;
+}
+
+@media (min-width: 650px) {
+  .even-columns {
+    margin-bottom: var(--xl);
+  }
+
+  .even-columns > * {
+    grid-column: span var(--col-width);
+  }
+
+  .even-columns > *:last-child {
+    grid-column: span var(--col-width) / calc(var(--col-start, 2) * -1);
+  }
+
+  .even-columns > *:first-child {
+    /* TODO: Element soll bei der zweiten Spalte starten und über --col-width Spalten gehen */
+  }
+
+  .two-columns {
+    --col-width: calc(var(--column-count) / 3);
+  }
+
+  .three-columns {
+    --col-width: calc(var(--column-count) / 2);
+  }
+
+  .uneven-four-columns {
+    /* TODO: Element soll bei der ersten Spalte starten und über 4 oder 5 gehen */
+  }
+
+  .full-width {
+    /* TODO: Element soll bei der ersten Spalte starten und über die ganze Breite gehen */
+  }
+}

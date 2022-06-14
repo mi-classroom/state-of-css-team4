@@ -1,0 +1,141 @@
+/* Page Title
+###########################################################################  */
+
+.page-title {
+  color: var(--color-decoration);
+  font-family: var(--ff-sans);
+  font-size: clamp(var(--xl), var(--xl) + 5vw, 200px);
+  font-weight: 700;
+  line-height: 90%;
+  text-shadow: var(--shadow-l);
+}
+
+/* Headshot
+###########################################################################  */
+.headshot-round {
+  background-color: var(--dark);
+  /* TODO: rundes Headshot Bild */
+}
+
+/* Info
+###########################################################################  */
+
+.info {
+  padding-bottom: var(--l);
+}
+
+.info figure {
+  display: flex;
+  gap: var(--m);
+}
+
+.info figure img {
+  max-width: 5rem;
+}
+
+.info h2 {
+  margin-bottom: var(--m);
+  font-size: 1.2em;
+}
+
+/* Link Button
+###########################################################################  */
+
+.link-button {
+  display: inline-block;
+  padding: var(--xxs) var(--xs);
+  border: 1px solid transparent;
+  margin: 0 0 var(--m);
+  appearance: none;
+  background-color: var(--color-accent);
+  border-radius: 0;
+  color: #fefefe;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: var(--lh-tight);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--tr-fast) ease-out, color var(--tr-fast) ease-out;
+  vertical-align: middle;
+}
+
+.link-button:hover {
+  background-color: var(--darkest);
+}
+
+/* Project
+###########################################################################  */
+
+.project {
+  position: relative;
+}
+
+.project h3 {
+  /* TODO: Headline soll oben links auf dem Bild positioniert sein und einen dunklen Abdecker haben */
+  color: var(--lightest);
+  text-shadow: var(--shadow-m);
+}
+
+.project img,
+.project figcaption {
+  display: block;
+  margin-bottom: var(--m);
+}
+
+.project img {
+  /* TODO: Höhe sollte bei den Bildern gleich sein */
+}
+
+.project figcaption p {
+  margin-bottom: var(--m);
+}
+
+/* Teaser
+###########################################################################  */
+
+.teaser h2 {
+  margin-bottom: var(--m);
+  color: var(--color-decoration);
+}
+
+.teaser .link-button {
+  margin-top: var(--m);
+}
+
+/* Intro
+###########################################################################  */
+
+.intro {
+  margin-top: var(--xxl);
+  margin-bottom: var(--xxl);
+}
+
+.intro p {
+  font-size: var(--xl);
+  line-height: var(--lh-normal);
+}
+
+/* Main Header
+###########################################################################  */
+
+.main-header img {
+  display: none;
+}
+
+.main-header .page-title {
+  margin-top: var(--m);
+}
+
+@media (min-width: 650px) {
+  .main-header img {
+    display: block;
+    /* TODO: Bild und Text sollen überlappen (Broken Grid) */
+  }
+
+  .main-header .page-title {
+    z-index: 1;
+    padding: var(--m);
+    /* TODO: Bild und Text sollen überlappen (Broken Grid) */
+    mix-blend-mode: screen;
+  }
+}
